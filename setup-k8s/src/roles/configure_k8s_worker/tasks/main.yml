@@ -1,0 +1,59 @@
+# --------------------------------------------------
+# O Kubelet não será iniciado se o sistema tiver a troca ativada, então estamos desabilitando a troca usando o código abaixo.
+# --------------------------------------------------
+  - name: Remove swapfile from /etc/fstab
+    mount:
+      name: "{{ item }}"
+      fstype: swap
+      state: absent
+    with_items:
+      - swap
+      - none
+
+  - name: Disable swap
+    command: swapoff -a
+    when: ansible_swaptotal_mb > 0
+
+# --------------------------------------------------
+# Instalando kubelet, kubeadm e kubectl usando o código abaixo
+# --------------------------------------------------
+  - name: Adicionar uma chave de assinatura apt para Kubernetes
+    apt_key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+
+  - name: Adicionando repositório apt para Kubernetes
+    apt_repository:
+      repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: kubernetes.list
+
+  - name: Instalar binários do Kubernetes
+    apt: 
+      name: "{{ packages }}"
+      state: present
+      update_cache: yes
+    vars:
+      packages:
+        - kubelet=1.25.1-00 
+        - kubeadm=1.25.1-00
+        - kubectl=1.25.1-00
+
+  - name: Configurar o ip do nó
+    lineinfile:
+      path: /etc/default/kubelet
+      line: KUBELET_EXTRA_ARGS=--node-ip={{ node_ip }}
+      create: yes
+
+  - name: Restart kubelet
+    service:
+      name: kubelet
+      daemon_reload: yes
+      state: restarted
+
+# Junte os nós ao cluster Kubernetes usando o código abaixo.
+  - name: Copy the join command to server location
+    copy: src=join-command dest=/tmp/join-command.sh mode=0777
+
+  - name: Join the node to cluster
+    command: sh /tmp/join-command.sh

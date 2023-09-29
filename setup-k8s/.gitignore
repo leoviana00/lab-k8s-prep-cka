@@ -1,0 +1,14 @@
+*
+!.gitignore
+!src
+!keys/
+!keys/**/*
+!src/**/*
+!images
+!images/**/*
+!LICENSE
+!Makefile
+!Readme.md
+!Vagrantfile
+!ansible.cfg
+!requirements.txt

@@ -1,0 +1,87 @@
+# --------------------------------------------------
+# O Kubelet não será iniciado se o sistema tiver a troca ativada, então estamos desabilitando a troca usando o código abaixo.
+# --------------------------------------------------
+  - name: Remover swap como mount point
+    mount:
+      name: "{{ item }}"
+      fstype: swap
+      state: absent
+    with_items:
+      - swap
+      - none
+
+  - name: Disable swap
+    command: swapoff -a
+    when: ansible_swaptotal_mb > 0
+
+# --------------------------------------------------
+# Instalando kubelet, kubeadm e kubectl usando o código abaixo
+# --------------------------------------------------
+  - name: Adicionar uma chave de assinatura apt para Kubernetes
+    apt_key:
+      url: "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+      state: present
+
+  - name: Adicionando repositório apt para Kubernetes
+    apt_repository:
+      repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: kubernetes.list
+
+  - name: Instalar binários do Kubernetes
+    apt: 
+      name: "{{ packages }}"
+      state: present
+      update_cache: yes
+    vars:
+      packages:
+        - kubelet=1.25.1-00
+        - kubeadm=1.25.1-00
+        - kubectl=1.25.1-00
+
+  - name: Configurar o ip do nó
+    lineinfile:
+      path: /etc/default/kubelet
+      line: KUBELET_EXTRA_ARGS=--node-ip={{ node_ip }}
+      create: yes
+
+  - name: Reiniciar kubelet
+    service:
+      name: kubelet
+      daemon_reload: yes
+      state: restarted
+
+# --------------------------------------------------
+# Inicialize o cluster Kubernetes com kubeadm usando o código abaixo (aplicável apenas no nó mestre)
+# --------------------------------------------------
+  - name: Inicialize o cluster Kubernetes usando o kubeadm
+    command: kubeadm init --apiserver-advertise-address="192.168.50.10" --apiserver-cert-extra-sans="192.168.50.10"  --node-name k8s-master --pod-network-cidr=192.168.0.0/16
+
+# --------------------------------------------------
+# Configure o arquivo de configuração do kube para que o usuário vagrant acesse o cluster Kubernetes usando o código abaixo.
+# --------------------------------------------------
+  - name: Configurar kubeconfig para usuário vagrant
+    command: "{{ item }}"
+    with_items:
+     - mkdir -p /home/vagrant/.kube
+     - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+     - chown vagrant:vagrant /home/vagrant/.kube/config
+
+# --------------------------------------------------
+# Configure o provedor de rede do contêiner e o mecanismo de política de rede usando o código abaixo.
+# --------------------------------------------------
+  - name: Instalar calico pod rede
+    become: false
+    command: kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.1/manifests/calico.yaml
+
+# --------------------------------------------------
+# Gere o comando kube join para unir o nó ao cluster Kubernetes e armazene o comando no arquivo chamado join-command.
+# --------------------------------------------------
+  - name: Generate join command
+    command: kubeadm token create --print-join-command
+    register: join_command
+
+  - name: Copy join command to local file
+    become: false
+    local_action: copy content="{{ join_command.stdout_lines[0] }}" dest="./join-command"
+  
