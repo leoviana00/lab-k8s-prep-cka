@@ -10,7 +10,7 @@
   <a href="#-roadmap">Roadmap</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-requisitos">Requisitos Computacionais</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-roteiro">Roteiro da CKA</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-roteiro-de-preparação-da-cka">Roteiro da CKA</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-referências">Referências</a>
 </p>
 
@@ -35,7 +35,7 @@
 1. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 
-## ♟️ Requisitos
+## ♟️ Requisitos computacionais
 
 - [Na documentação oficial do kubernetes é exigido de cada nó do cluster as seguintes configurações:](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
@@ -49,5 +49,4 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 ```
 
 ## 📑 Roteiro de preparação da CKA
-
-## 📄 Referência
+## 📄 Referências
