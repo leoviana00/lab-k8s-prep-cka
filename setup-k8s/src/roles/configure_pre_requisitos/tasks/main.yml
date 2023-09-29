@@ -1,0 +1,177 @@
+---
+# ---------------------------------------------------
+#                INSTALAÇÃO DOCKER
+# ---------------------------------------------------
+- name: Instalar pacotes de dependências
+  package:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+    - curl
+    - lsb-release
+    - gnupg-agent
+    - gnupg2
+    - python3-pip
+    - python3-setuptools
+
+- name: Remover versões legadas do docker
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-engine
+    - docker.io
+
+- name: Adicionar chave gpg para o apt
+  apt_key:
+    url: "https://download.docker.com/linux/debian/gpg"
+    state: present
+
+- name: Adicionar repositório apt do docker
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+    state: present
+    update_cache: true
+
+- name: Configurar hold dos pacotes
+  apt:
+    name: "{{ item }}"
+    state: latest
+    update_cache: true
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+
+- name: Instalar python-docker 
+  pip:
+    name: docker
+    state: present
+
+- name: Instalar Docker Compose
+  get_url:
+    url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 0755
+
+- name: Restartar serviço do docker
+  service:
+    name: docker
+    enabled: yes
+    state: restarted
+    daemon_reload: yes
+
+# ---------------------------------------------------
+#                USUÁRIOS
+# ---------------------------------------------------
+- name: Criar grupo
+  group:
+    name: "{{ item }}"
+  with_items:
+    - vagrant
+    - docker
+
+- name: Add docker group to users {{ ansible_user }} groups
+  user:
+    name: "{{ ansible_user }}"
+    append: true
+    groups: docker
+
+- name: Adicionar chaves públicas para root
+  authorized_key:
+    user: root
+    state: present
+    key: "{{ item }}"
+  with_file:
+    - keys/vagrant.pub
+
+- name: Adicionar chaves públicas para vagrant
+  authorized_key:
+    user: vagrant
+    state: present
+    key: "{{ item }}"
+  with_file:
+    - keys/vagrant.pub
+
+- name: Modificar /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    line: 'vagrant ALL=(ALL:ALL) NOPASSWD: ALL'
+    insertbefore: BOF
+
+
+# ---------------------------------------------------
+#                INSTALAÇÃO CONTAINERD
+# ---------------------------------------------------
+- name: Instalar containerd 1.6.9-1
+  apt:
+    name: containerd.io=1.6.9-1
+    state: present
+    update_cache: yes
+    force: true
+
+- name: Certifique-se de que o containerd seja iniciado e ativado na inicialização
+  service:
+    name: containerd
+    state: started
+    enabled: true
+
+
+- name: Verifique se o diretório de configuração containerd existe.
+  file:
+    path: /etc/containerd
+    state: directory
+  register: containerd_dir
+
+- name: Obter padrões do containerd.
+  command: containerd config default
+  changed_when: false
+  register: containerd_config_default
+  when: containerd_config_default_write
+
+- name: Prepare containerd/config.toml a partir da configuração padrão.
+  copy:
+    dest: /tmp/containerd_config.toml
+    content: "{{ containerd_config_default.stdout }}"
+  when: containerd_config_default_write
+  changed_when: false
+
+- name: Defina o driver do Cgroup como systemd
+  lineinfile:
+    insertafter: '.*\[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options\]$'
+    line: '          SystemdCgroup = true'
+    state: present
+    path: /tmp/containerd_config.toml
+  when: containerd_config_default_write and containerd_config_cgroup_driver_systemd
+  changed_when: false
+
+- name: Certifique-se de que SystemdCgroup = false não esteja definido
+  ansible.builtin.lineinfile:
+    path: /tmp/containerd_config.toml
+    state: absent
+    line: '            SystemdCgroup = false'
+  when: containerd_config_default_write and containerd_config_cgroup_driver_systemd
+  changed_when: false
+
+- name: Copiar config.toml para /etc/containerd
+  copy:
+    remote_src: true
+    src: /tmp/containerd_config.toml
+    dest: /etc/containerd/config.toml
+  when: containerd_config_default_write
+
+- name: Limpar arquivo temporário
+  file:
+    path: /tmp/containerd_config.toml
+    state: absent
+  changed_when: false
+  
+- name: Reiniciar o Containerd
+  service:
+    name: containerd
+    state: restarted

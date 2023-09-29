@@ -1,0 +1,3 @@
+---
+containerd_config_default_write: true
+containerd_config_cgroup_driver_systemd: false
