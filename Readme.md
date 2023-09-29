@@ -49,4 +49,11 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 ```
 
 ## 📑 Roteiro de preparação da CKA
+
+- [ ] Arquitetura do Cluster, instalação e configuração
+- [ ] Workloads e Scheduling
+- [ ] Services and Networkings
+- [ ] Storage
+- [ ] Troubleshooting
+
 ## 📄 Referências
