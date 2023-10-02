@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cka-nginx-pod
+spec:
+  containers:
+  - name: cka-nginx-pod
+    image: nginx
+    ports:
+    - containerPort: 80
