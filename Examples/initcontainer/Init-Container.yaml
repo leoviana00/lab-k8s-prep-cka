@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-init
+spec:
+  initContainers:
+  - name: init-1
+    image: busybox
+    command: ["echo","I am init-container"]
+  - name: init-2
+    image: busybox
+    command: ["sleep","30"]
+
+  containers:
+  - name: main-app
+    image: busybox
+    command: ["sleep","1d"]
+  restartPolicy: Never
