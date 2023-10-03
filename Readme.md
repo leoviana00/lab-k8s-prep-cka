@@ -57,3 +57,5 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 - [ ] Troubleshooting
 
 ## 📄 Referências
+- https://helm.sh/docs/intro/install/
+- https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
