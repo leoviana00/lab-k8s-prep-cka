@@ -24,19 +24,34 @@
 
 ## 👣 Roadmap 
 
-- [ ] Preparação de um cluster mínimo viável
-- [ ] Instalação através da ferramenta kubeadm
-- [ ] Prepara uma infraestrutura local através do uso de máquinas virtuais com VirtualBox e Vagrant
-- [ ] Utiliza o kubeadm para preparar um cluster kubernetes em uma determinada versão
-- [ ] Atualização do cluster para versão mais atualizada até o momento
+- [x] Preparação de um cluster mínimo viável
+- [x] Instalação através da ferramenta kubeadm
+- [x] Prepara uma infraestrutura local através do uso de máquinas virtuais com VirtualBox e Vagrant
+- [x] Utiliza o kubeadm para preparar um cluster kubernetes em uma determinada versão
+- [x] Atualização do cluster para versão mais atualizada até o momento
 
 ## ✨ Ambiente
 
+- Setup Kubernetes com `Kubeadm`
+
 1. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
+3. [Ansible](https://docs.ansible.com/)
+4. [Setup K8s Kubeadm](./setup-k8s/Readme.md)
+
+- Setup Kubernetes com `Kubespray`
+
+1. [Setup K8s Kubespray](./setup-k8s-kubespray/kubespray/README.md)
+2. [Kubespray](https://github.com/kubernetes-sigs/kubespray)
+
+- Setup Kubernetes com `Kind`
+
+1. [Setup K8s Kind](./setup-kind/Readme.md)
+2. [Kind](https://kind.sigs.k8s.io/)
 
 ## ♟️ Requisitos computacionais
 
+- Utilizando o Setup Kubernetes com kubeadm.
 - [Na documentação oficial do kubernetes é exigido de cada nó do cluster as seguintes configurações:](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
     - Um host linux compatível
