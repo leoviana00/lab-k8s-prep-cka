@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: app-taint
+  name: app-taint
+spec:
+  containers:
+  - image: nginx
+    name: app-taint
+    resources: {}
+  tolerations:
+  - key: "node-role.kubernetes.io/master"
+    effect: "NoSchedule"  
+  nodeSelector:
+    kubernetes.io/hostname: master-k8s  
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: constraints-mem
+spec:
+  containers:
+  - name: constraints-mem
+    image: nginx
+    resources:
+      limits:
+        memory: "2Gi"
+      requests:
+        memory: "2Gi"
