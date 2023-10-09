@@ -18,12 +18,16 @@
     - Analise e concerte ele;
 </details>
 
+<details>
+<summary>DESAFIO 3</summary>
+
 3. Desafio número 3:
     - Criar um deployment chamado web-proj-268, com uma imagem `nginx:1.16` e uma replica;
     - Depois de criado, atualize a versão da imagem no deployment para `nginx:1.17` usando rolling update;
     - Certifique-se de que a atualização da versão esteja registrada na anotação do recurso;
     - Verificar histórico de versões;
     - Depois faça um rollout do deploy;
+</details>
 
 4. Desafio número 4:
     - Criar um novo deployment chamado web-003;
