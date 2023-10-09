@@ -2,9 +2,12 @@
 
 <details>
 <summary>DESAFIO 1</summary>
-- Criar um pod chamado admin-pod com uma imagem `busybox`;
-- Permitir que o pode seja capaz de definir a hora do sistema;
-- O container deve dormir por 3200 segundos;
+
+1. Desafio número 1 
+    - Criar um pod chamado admin-pod com uma imagem `busybox`;
+    - Permitir que o pode seja capaz de definir a hora do sistema;
+    - O container deve dormir por 3200 segundos;
+</details>
 
 2. Desafio número 2:
     - Um arquivo `kubeconfig` chamado de `test.kubeconfig` foi criado em `/root/TEST`;
