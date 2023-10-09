@@ -31,3 +31,11 @@
 
 7. Desafio número 7:
     - Criar um multi container pod, `multi-pod` no namespace `desenvolvimento` usando as imagens `nginx` e `redis`;
+
+<details>
+<summary>8. Desafio número 8:</summary>
+- [Passo 1] - Criar um novo deployment chamado nginx-deploy com uma imagem `nginx:1.16` com 8 replicas;
+- [Passo 2] - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: worker-node-1;
+- [NOTA] - Reverter as alterações realizadas
+- [SOLUÇÃO](./solucao/desafio-8.md)
+</details>
