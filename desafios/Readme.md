@@ -9,10 +9,14 @@
     - O container deve dormir por 3200 segundos;
 </details>
 
+<details>
+<summary>DESAFIO 2</summary>
+
 2. Desafio número 2:
     - Um arquivo `kubeconfig` chamado de `test.kubeconfig` foi criado em `/root/TEST`;
     - Há algo errado em sua configuração;
     - Analise e concerte ele;
+</details>
 
 3. Desafio número 3:
     - Criar um deployment chamado web-proj-268, com uma imagem `nginx:1.16` e uma replica;
