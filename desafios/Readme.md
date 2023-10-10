@@ -114,3 +114,19 @@
     - [Laboratório - Challenge 12](./labs/lab-desafio-12.md)
 </details>
 
+<details>
+<summary>DESAFIO 13</summary>
+
+12. Desafio número 13:
+
+    - Create a pod called pod-multi with two containers, description mentioned below;
+        - Container 1: name `container1`, image `nginx`;
+        - Container 2: name `container2`, image `busybox`, command `sleep 4800`;
+
+    - Crie um pod chamado pod-multi com dois containers, descrição mencionada abaixo;
+        - Container 1: nome `container1`, imagem `nginx`;
+        - Container 2: nome `container2`, imagem `busybox`, comando `sleep 4800`;
+
+    - [Laboratório - Challenge 13](./labs/lab-desafio-13.md)
+</details>
+
