@@ -11,6 +11,7 @@
   <a href="#-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-requisitos-computacionais">Requisitos Computacionais</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-roteiro-de-preparação-da-cka">Roteiro da CKA</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-referências">Referências</a>
 </p>
 
@@ -29,6 +30,7 @@
 - [x] Prepara uma infraestrutura local através do uso de máquinas virtuais com VirtualBox e Vagrant
 - [x] Utiliza o kubeadm para preparar um cluster kubernetes em uma determinada versão
 - [x] Atualização do cluster para versão mais atualizada até o momento
+- [x] Resolver alguns desafios
 
 ## ✨ Ambiente
 
