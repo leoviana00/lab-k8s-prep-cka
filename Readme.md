@@ -71,6 +71,10 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 - [ ] Storage
 - [ ] Troubleshooting
 
+## 🧑‍💻 Desafios
+
+- [ ] [Desafios](./desafios/Readme.md)
+
 ## 📄 Referências
-- https://helm.sh/docs/intro/install/
-- https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
+- [ Documentação Kubernetes ](https://kubernetes.io/) 
+- [ Curso preparatório: Certificação CKA | Kubernetes v1.26 ] 
