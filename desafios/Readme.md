@@ -29,25 +29,43 @@
     - Depois faça um rollout do deploy;
 </details>
 
+<details>
+<summary>DESAFIO 4</summary>
+
 4. Desafio número 4:
     - Criar um novo deployment chamado web-003;
     - Escalar o deployment para 3 replicas;
     - Certifique-se de que o número desejado de pods esteja sempre em execução;
+</details>
+
+<details>
+<summary>DESAFIO 5</summary>
 
 5. Desafio número 5:
     - Atualizar o Cluster (Masters e nodes) de x.xx.x para x.xx.x;
     - Certifique-se de que o número desejado do pod esteja sempre em execução
+</details>
+
+<details>
+<summary>DESAFIO 6</summary>
 
 6. Desafio número 6:
     - Criar um pod chamado web-load-5461 usando a imagem `nginx:1.17` com o `label` configurado para `tier=web`;
+</details>
+
+<details>
+<summary>DESAFIO 7</summary>
 
 7. Desafio número 7:
     - Criar um multi container pod, `multi-pod` no namespace `desenvolvimento` usando as imagens `nginx` e `redis`;
+</details>
 
 <details>
-<summary>8. Desafio número 8:</summary>
-- [Passo 1] - Criar um novo deployment chamado nginx-deploy com uma imagem `nginx:1.16` com 8 replicas;
-- [Passo 2] - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: worker-node-1;
-- [NOTA] - Reverter as alterações realizadas
-- [SOLUÇÃO](./solucao/desafio-8.md)
+<summary>DESAFIO 8:</summary>
+
+8. Desafio número 8:
+    - Criar um novo deployment chamado nginx-deploy com uma imagem `nginx:1.16` com 8 replicas;
+    - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: worker-node-1;
+    - [NOTA] - Reverter as alterações realizadas
+    - [SOLUÇÃO](./solucao/desafio-8.md)
 </details>
