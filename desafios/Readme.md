@@ -67,7 +67,7 @@
     - Criar um novo deployment chamado `nginx-deploy` com uma imagem `nginx:1.16` com `8 replicas`;
     - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: `worker-node-1`;
     - [NOTA] - Reverter as alterações realizadas
-    - [LABORATÓRIO](./labs/lab-deasafio-8.md)
+    - [Laboratório - Challenge 8](./labs/lab-desafio-8.md)
 </details>
 
 <details>
