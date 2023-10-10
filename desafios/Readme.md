@@ -95,6 +95,6 @@
 
     - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
 
-    - [LABORATÓRIO]
+    - [Laboratório - Challenge 11](./lab/lab-desafio-11.md)
 </details>
 
