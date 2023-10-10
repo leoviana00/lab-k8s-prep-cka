@@ -67,7 +67,7 @@
     - Criar um novo deployment chamado `nginx-deploy` com uma imagem `nginx:1.16` com `8 replicas`;
     - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: `worker-node-1`;
     - [NOTA] - Reverter as alterações realizadas
-    - [SOLUÇÃO](./solucao/desafio-8.md)
+    - [LABORATÓRIO](./solucao/lab-deasafio-8.md)
 </details>
 
 <details>
@@ -85,3 +85,16 @@
 10. Desafio número 10:
     - Existem 3 nós no cluster, crie `DaemonSet` (Nome: my-pod, imagem nginx) em cada nó, exceto um (work-node-3)
 </details>
+
+<details>
+<summary>DESAFIO 11</summary>
+
+11. Desafio número 11:
+
+    - There are various pods running in all the namespaces of kubernetes cluster.  Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
+
+    - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
+
+    - [LABORATÓRIO]
+</details>
+
