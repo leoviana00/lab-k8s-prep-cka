@@ -67,7 +67,7 @@
     - Criar um novo deployment chamado `nginx-deploy` com uma imagem `nginx:1.16` com `8 replicas`;
     - Certificque-se de que nenhum pod seja implantado em um nó de trabalho: `worker-node-1`;
     - [NOTA] - Reverter as alterações realizadas
-    - [LABORATÓRIO](./solucao/lab-deasafio-8.md)
+    - [LABORATÓRIO](./labs/lab-deasafio-8.md)
 </details>
 
 <details>
@@ -95,6 +95,6 @@
 
     - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
 
-    - [Laboratório - Challenge 11](./lab/lab-desafio-11.md)
+    - [Laboratório - Challenge 11](./labs/lab-desafio-11.md)
 </details>
 
