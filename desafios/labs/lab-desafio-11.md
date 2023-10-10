@@ -1,5 +1,14 @@
 ## Desafio 11
 
+- Acessando o `Control PLane` [Master]
+```bash
+vagrant ssh master-01
+```
+
+<p align="center">
+  <img alt="cka" src="image/lab-11/ssh-master-01.png">
+</p>
+
 - Listando meus nodes
 ```bash
 kubectl get nodes
