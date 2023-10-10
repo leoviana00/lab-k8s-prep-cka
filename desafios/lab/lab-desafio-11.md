@@ -27,6 +27,11 @@ kubectl get po -A
   <img alt="cka" src="image/lab-11/list-all-pods.png">
 </p>
 
+- Visualizando saida da lista de pods em json
+```bash
+kubectl get po -o json
+```
+
 - Criar comando para listar todos os Pods em ordem crescente
 ```bash
 echo "kubectl get po -A --sort-by=.metadata.creationTimestamp | tac" > /opt/pods_asc.sh
