@@ -1,4 +1,8 @@
-## Desafios
+## 🚀 Cluster utilizado para os desafios
+
+- Para os desafios utilizei o Cluster criado com o [Setup K8s Kubespray](../setup-k8s-kubespray/kubespray/README.md)
+
+## 🎯 Documentação dos exercicios/desafios realizados
 
 <details>
 <summary>DESAFIO 1</summary>
