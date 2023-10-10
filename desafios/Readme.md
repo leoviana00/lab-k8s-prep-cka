@@ -98,3 +98,15 @@
     - [Laboratório - Challenge 11](./labs/lab-desafio-11.md)
 </details>
 
+<details>
+<summary>DESAFIO 12</summary>
+
+12. Desafio número 12:
+
+    - Create a static pod on `node01` called `static-nginx` with image `nginx` and you have to make sure that it is recreated/restarted automatically in case of any failure happens.
+
+    - Crie um pod estático em `node01` chamado `static-nginx` com a imagem `nginx` e você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
+
+    - [Laboratório - Challenge 12](./labs/lab-desafio-12.md)
+</details>
+
