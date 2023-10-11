@@ -30,7 +30,9 @@
 - [x] Prepara uma infraestrutura local através do uso de máquinas virtuais com VirtualBox e Vagrant
 - [x] Utiliza o kubeadm para preparar um cluster kubernetes em uma determinada versão
 - [x] Atualização do cluster para versão mais atualizada até o momento
-- [x] Resolver alguns desafios
+- [x] Preparanção de um setup kubernetes com kubespray
+- [x] Preparação de um setup kubernetes com kind
+- [x] Lista de exercicios
 
 ## ✨ Ambiente
 
@@ -67,15 +69,12 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 
 ## 📑 Roteiro de preparação da CKA
 
-- [ ] Arquitetura do Cluster, instalação e configuração
-- [ ] Workloads e Scheduling
-- [ ] Services and Networkings
-- [ ] Storage
-- [ ] Troubleshooting
-
-## 🧑‍💻 Desafios
-
-- [ ] [Desafios](./desafios/Readme.md)
+- [x] Arquitetura do Cluster, instalação e configuração
+- [x] Workloads e Scheduling
+- [x] Services and Networkings
+- [x] Storage
+- [x] Troubleshooting
+- [ ] [Praticar comexercicios e desafios](./desafios/Readme.md)
 
 ## 📄 Referências
 - [ Documentação Kubernetes ](https://kubernetes.io/) 
