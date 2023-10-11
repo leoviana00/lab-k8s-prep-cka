@@ -50,8 +50,11 @@
     - Criar um deployment chamado `web-proj-268`, com uma imagem `nginx:1.16` e `uma replica`;
     - Depois de criado, atualize a versão da imagem no deployment para `nginx:1.17` usando `rolling update`;
     - Certifique-se de que a atualização da versão esteja registrada na anotação do recurso;
-    - Verificar histórico de versões;
-    - Depois faça um `rollout` do deploy;
+
+    &nbsp;
+    - Itens abaixo fora do escopo do exercicio acima: (Só para praticar mais um pouco)
+        - Verificar histórico de versões;
+        - Depois faça um `rollout` do deploy;
 
     &nbsp;
     - [Laboratório - Challenge 3](./labs/lab-desafio-3.md)
@@ -119,10 +122,12 @@
 
 11. Question
 
-    - There are various pods running in all the namespaces of kubernetes cluster.  Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
+    - There are various pods running in all the namespaces of kubernetes cluster.  
+    - Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
 
     &nbsp;
-    - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
+    - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. 
+    - Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
 
     &nbsp;
     - [Laboratório - Challenge 11](./labs/lab-desafio-11.md)
@@ -133,10 +138,12 @@
 
 12. Question
 
-    - Create a static pod on `k8s-lab-node-1` called `static-nginx` with image `nginx` and you have to make sure that it is recreated/restarted automatically in case of any failure happens.
+    - Create a static pod on `k8s-lab-node-1` called `static-nginx` with image `nginx`;
+    - You have to make sure that it is recreated/restarted automatically in case of any failure happens.
 
     &nbsp;
-    - Crie um pod estático em `k8s-lab-node-1` chamado `static-nginx` com a imagem `nginx` e você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
+    - Crie um pod estático em `k8s-lab-node-1` chamado `static-nginx` com a imagem `nginx`;
+    - Você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
 
     &nbsp;
     - [Laboratório - Challenge 12](./labs/lab-desafio-12.md)
