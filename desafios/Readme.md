@@ -8,9 +8,15 @@
 <summary>CKA Challenge Question 1</summary>
 
 1. Question
+    - Create a new pod called admin-pod with image `busybox`;
+    - Allow the pod to be able to set system_time;
+    - The container should sleep for 3200 seconds;
+
     - Criar um pod chamado admin-pod com uma imagem `busybox`;
     - Permitir que o pode seja capaz de definir a hora do sistema;
     - O container deve dormir por 3200 segundos;
+
+    - [Laboratório - Challenge 1](./labs/lab-desafio-1.md)
 </details>
 
 <details>
