@@ -42,11 +42,19 @@
 <summary>CKA Challenge Question 3</summary>
 
 3. Question
-    - Criar um deployment chamado `web-proj-268``, com uma imagem `nginx:1.16` e `uma replica`;
+    - Create a new deployment called `web-proj-268`, with image `nginx:1.16` and 1 replica;
+    - Next upgrade the deployment to version `1.17` using rolling update;
+    - Make sure that the version upgrade is recorded in the resource annotation;
+
+    &nbsp;
+    - Criar um deployment chamado `web-proj-268`, com uma imagem `nginx:1.16` e `uma replica`;
     - Depois de criado, atualize a versão da imagem no deployment para `nginx:1.17` usando `rolling update`;
     - Certifique-se de que a atualização da versão esteja registrada na anotação do recurso;
     - Verificar histórico de versões;
     - Depois faça um `rollout` do deploy;
+
+    &nbsp;
+    - [Laboratório - Challenge 3](./labs/lab-desafio-3.md)
 </details>
 
 <details>
