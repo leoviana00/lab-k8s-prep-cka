@@ -213,7 +213,29 @@
     &nbsp;
     - Use a consulta `JSON PATH` para recuperar os osImages de todos os nós e armazená-los em um arquivo `allNodes_osImage_45CVB34Ji.txt` no local raiz;
     - Nota: Os osImages estão na seção nodeInfo no status de cada nó;
-    
+
     &nbsp;
     - [Laboratório - Challenge 16](./labs/lab-desafio-16.md)
 </details>
+
+<details>
+<summary>CKA Challenge Question 17</summary>
+
+17. Question
+    - Create a Persistent Volume with the given spscification.
+        - Volume Name: `pv-rnd`;
+        - Storage: `100Mi`;
+        - Access modes: `ReadWriteMany`
+        - Host Path: `/pv/host_data-rnd`
+
+    &nbsp;
+    - Crie um volume persistente com a especificação fornecida.
+        - Nome do volume: `pv-rnd`;
+        - Armazenamento: `100Mi`;
+        - Modos de acesso: `ReadWriteMany`
+        - Caminho do host: `/pv/host_data-rnd`
+
+    &nbsp;
+    - [Laboratório - Challenge 17](./labs/lab-desafio-17.md)
+</details>
+
