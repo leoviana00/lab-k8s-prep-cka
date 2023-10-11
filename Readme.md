@@ -32,7 +32,7 @@
 - [x] Atualização do cluster para versão mais atualizada até o momento
 - [x] Preparanção de um setup kubernetes com kubespray
 - [x] Preparação de um setup kubernetes com kind
-- [x] Lista de exercicios
+- [x] Lista de exercicios / Laboratórios
 
 ## ✨ Ambiente
 
