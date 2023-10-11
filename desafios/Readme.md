@@ -202,3 +202,18 @@
     &nbsp;
     - [Laboratório - Challenge 15](./labs/lab-desafio-15.md)
 </details>
+
+<details>
+<summary>CKA Challenge Question 16</summary>
+
+16. Question
+    - Use `JSON PATH` query to retrieve the osImages of all the nodes and store it in a file `allNodes_osImage_45CVB34Ji.txt` at root location;
+    - Note: The osImages are under the nodeInfo section under status of each node;
+
+    &nbsp;
+    - Use a consulta `JSON PATH` para recuperar os osImages de todos os nós e armazená-los em um arquivo `allNodes_osImage_45CVB34Ji.txt` no local raiz;
+    - Nota: Os osImages estão na seção nodeInfo no status de cada nó;
+    
+    &nbsp;
+    - [Laboratório - Challenge 16](./labs/lab-desafio-16.md)
+</details>
