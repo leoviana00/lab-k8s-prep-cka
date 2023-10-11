@@ -74,7 +74,11 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 - [x] Services and Networkings
 - [x] Storage
 - [x] Troubleshooting
-- [ ] [Praticar comexercicios e desafios](./desafios/Readme.md)
+
+
+## 🧮 Laboratórios
+
+- [ ] [Laboratórios: Praticar com exercicios e desafios](./desafios/Readme.md)
 
 ## 📄 Referências
 - [ Documentação Kubernetes ](https://kubernetes.io/) 
