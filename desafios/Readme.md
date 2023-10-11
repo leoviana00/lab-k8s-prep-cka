@@ -11,7 +11,7 @@
     - Create a new pod called admin-pod with image `busybox`;
     - Allow the pod to be able to set system_time;
     - The container should sleep for 3200 seconds;
-
+______________
     - Criar um pod chamado admin-pod com uma imagem `busybox`;
     - Permitir que o pode seja capaz de definir a hora do sistema;
     - O container deve dormir por 3200 segundos;
@@ -102,7 +102,7 @@
 11. Question
 
     - There are various pods running in all the namespaces of kubernetes cluster.  Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
-
+______________
     - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
 
     - [Laboratório - Challenge 11](./labs/lab-desafio-11.md)
@@ -114,7 +114,7 @@
 12. Question
 
     - Create a static pod on `k8s-lab-node-1` called `static-nginx` with image `nginx` and you have to make sure that it is recreated/restarted automatically in case of any failure happens.
-
+______________
     - Crie um pod estático em `k8s-lab-node-1` chamado `static-nginx` com a imagem `nginx` e você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
 
     - [Laboratório - Challenge 12](./labs/lab-desafio-12.md)
@@ -128,7 +128,7 @@
     - Create a pod called pod-multi with two containers, description mentioned below;
         - Container 1: name `container1`, image `nginx`;
         - Container 2: name `container2`, image `busybox`, command `sleep 4800`;
-
+______________
     - Crie um pod chamado pod-multi com dois containers, descrição mencionada abaixo;
         - Container 1: nome `container1`, imagem `nginx`;
         - Container 2: nome `container2`, imagem `busybox`, comando `sleep 4800`;
@@ -142,7 +142,7 @@
 14. Question
     - Create a pod called `delta-pod` in defense namaspace belonging to the development environment `(env=dev)` and frontend tier `(tier=front)`
     - Image: `nginx:1.17`
-
+______________
     - Crie um pod chamado `delta-pod` no namaspace de defesa pertencente ao ambiente de desenvolvimento `(env=dev)` e à camada de frontend `(tier=front)`
     - Imagem: `nginx:1.17`
 
