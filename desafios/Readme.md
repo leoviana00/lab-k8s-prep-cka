@@ -240,7 +240,7 @@
 </details>
 
 <details>
-<summary>CKA Challenge Question 17</summary>
+<summary>CKA Challenge Question 18</summary>
 
 18. Question
     - Kubernetes Worker Node `node-01` not responding;
