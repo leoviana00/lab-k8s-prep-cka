@@ -239,3 +239,20 @@
     - [Laboratório - Challenge 17](./labs/lab-desafio-17.md)
 </details>
 
+<details>
+<summary>CKA Challenge Question 17</summary>
+
+18. Question
+    - Kubernetes Worker Node `node-01` not responding;
+    - Have a look anf fix the issue;
+
+    &nbsp;
+    - O nó de trabalho do Kubernetes `node-01` não está respondendo;
+    - Dê uma olhada e corrija o problema;
+
+
+    &nbsp;
+    - [Laboratório - Challenge 18](./labs/lab-desafio-18.md)
+</details>
+
+
