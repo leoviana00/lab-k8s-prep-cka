@@ -25,9 +25,17 @@
 <summary>CKA Challenge Question 2</summary>
 
 2. Question
+    - A kubeconfig file called `est.kubeconfig` has been created in `/root/TEST`;
+    - There is something wrong with configuration;
+    - Troubleshoot and fix it;
+
+    &nbsp;
     - Um arquivo `kubeconfig` chamado de `test.kubeconfig` foi criado em `/root/TEST`;
     - Há algo errado em sua configuração;
     - Analise e concerte ele;
+
+    &nbsp;
+    - [Laboratório - Challenge 2](./labs/lab-desafio-2.md)
 </details>
 
 <details>
