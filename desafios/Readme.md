@@ -182,3 +182,23 @@
     - [Laboratório - Challenge 14](./labs/lab-desafio-14.md)
 </details>
 
+<details>
+<summary>CKA Challenge Question 15</summary>
+
+15. Question
+    - Create a pod called `web-pod` using image `nginx`;
+    - Expose it internally with a service called `web-pod-svc`.
+    - Check that you are able to look up'the service and pod from within the cluster;
+    - Use the image: `busybox:1.28` for dns lookup;
+    - Record results in `/root/web-svc.svc` and `/root/web-pod.pod`;
+
+    &nbsp;
+    - Crie um pod chamado `web-pod` usando a imagem `nginx`;
+    - Exponha-o internamente com um serviço chamado `web-pod-svc`.
+    - Verifique se você consegue consultar o serviço e o pod dentro do cluster;
+    - Use a imagem: `busybox:1.28` para pesquisa de DNS;
+    - Registre os resultados em `/root/web-svc.svc` e `/root/web-pod.pod`;
+
+    &nbsp;
+    - [Laboratório - Challenge 15](./labs/lab-desafio-15.md)
+</details>
