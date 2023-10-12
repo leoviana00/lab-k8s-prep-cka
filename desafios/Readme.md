@@ -273,4 +273,22 @@
     - [Laboratório - Challenge 19](./labs/lab-desafio-19.md)
 </details>
 
+<details>
+<summary>CKA Challenge Question 20</summary>
+
+20. Question
+    - One Static Pod `web-static`, image `busybox`, is currently running on controlplane node;
+    - Move that static pod to run on node01;
+    - Don't need to do any other changes;
+    - NOTE: Static Pod name should be changed from web-static-controlplane to web-static-node01.
+
+    &nbsp;
+    - Um pod estático `web-static`, imagem `busybox`, está atualmente em execução no nó do plano de controle;
+    - Mova esse pod estático para rodar no node01;
+    - Não precisa fazer nenhuma outra alteração;
+    - NOTA: O nome do pod estático deve ser alterado de web-static-controlplane para web-static-node01.
+
+    &nbsp;
+    - [Laboratório - Challenge 20](./labs/lab-desafio-20.md)
+</details>
 
