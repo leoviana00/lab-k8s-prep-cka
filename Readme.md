@@ -11,7 +11,7 @@
   <a href="#-ambiente">Ambiente</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-requisitos-computacionais">Requisitos Computacionais</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-roteiro-de-preparação-da-cka">Roteiro da CKA</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-desafios">Desafios</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-laboratórios">Labs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-referências">Referências</a>
 </p>
 
@@ -30,7 +30,9 @@
 - [x] Prepara uma infraestrutura local através do uso de máquinas virtuais com VirtualBox e Vagrant
 - [x] Utiliza o kubeadm para preparar um cluster kubernetes em uma determinada versão
 - [x] Atualização do cluster para versão mais atualizada até o momento
-- [x] Resolver alguns desafios
+- [x] Preparanção de um setup kubernetes com kubespray
+- [x] Preparação de um setup kubernetes com kind
+- [x] Lista de exercicios / Laboratórios
 
 ## ✨ Ambiente
 
@@ -67,15 +69,16 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 
 ## 📑 Roteiro de preparação da CKA
 
-- [ ] Arquitetura do Cluster, instalação e configuração
-- [ ] Workloads e Scheduling
-- [ ] Services and Networkings
-- [ ] Storage
-- [ ] Troubleshooting
+- [x] Arquitetura do Cluster, instalação e configuração
+- [x] Workloads e Scheduling
+- [x] Services and Networkings
+- [x] Storage
+- [x] Troubleshooting
 
-## 🧑‍💻 Desafios
 
-- [ ] [Desafios](./desafios/Readme.md)
+## 🧮 Laboratórios
+
+- [ ] [Laboratórios: Praticar com exercicios e desafios](./desafios/Readme.md)
 
 ## 📄 Referências
 - [ Documentação Kubernetes ](https://kubernetes.io/) 

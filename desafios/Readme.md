@@ -25,20 +25,39 @@
 <summary>CKA Challenge Question 2</summary>
 
 2. Question
+    - A kubeconfig file called `est.kubeconfig` has been created in `/root/TEST`;
+    - There is something wrong with configuration;
+    - Troubleshoot and fix it;
+
+    &nbsp;
     - Um arquivo `kubeconfig` chamado de `test.kubeconfig` foi criado em `/root/TEST`;
     - Há algo errado em sua configuração;
     - Analise e concerte ele;
+
+    &nbsp;
+    - [Laboratório - Challenge 2](./labs/lab-desafio-2.md)
 </details>
 
 <details>
 <summary>CKA Challenge Question 3</summary>
 
 3. Question
-    - Criar um deployment chamado `web-proj-268``, com uma imagem `nginx:1.16` e `uma replica`;
+    - Create a new deployment called `web-proj-268`, with image `nginx:1.16` and 1 replica;
+    - Next upgrade the deployment to version `1.17` using rolling update;
+    - Make sure that the version upgrade is recorded in the resource annotation;
+
+    &nbsp;
+    - Criar um deployment chamado `web-proj-268`, com uma imagem `nginx:1.16` e `uma replica`;
     - Depois de criado, atualize a versão da imagem no deployment para `nginx:1.17` usando `rolling update`;
     - Certifique-se de que a atualização da versão esteja registrada na anotação do recurso;
-    - Verificar histórico de versões;
-    - Depois faça um `rollout` do deploy;
+
+    &nbsp;
+    - Itens abaixo fora do escopo do exercicio acima: (Só para praticar mais um pouco)
+        - Verificar histórico de versões;
+        - Depois faça um `rollout` do deploy;
+
+    &nbsp;
+    - [Laboratório - Challenge 3](./labs/lab-desafio-3.md)
 </details>
 
 <details>
@@ -103,10 +122,12 @@
 
 11. Question
 
-    - There are various pods running in all the namespaces of kubernetes cluster.  Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
+    - There are various pods running in all the namespaces of kubernetes cluster.  
+    - Write a command into `/opt/pods_asc.sh` which list all the `Pods` sorted by the `AGE` in Ascending order.
 
     &nbsp;
-    - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
+    - Existem vários pods em execução em todos os namespaces do cluster Kubernetes. 
+    - Escreva um comando em `/opt/pods_asc.sh` que liste todos os `Pods` classificados por idade em ordem crescente.
 
     &nbsp;
     - [Laboratório - Challenge 11](./labs/lab-desafio-11.md)
@@ -117,10 +138,12 @@
 
 12. Question
 
-    - Create a static pod on `k8s-lab-node-1` called `static-nginx` with image `nginx` and you have to make sure that it is recreated/restarted automatically in case of any failure happens.
+    - Create a static pod on `k8s-lab-node-1` called `static-nginx` with image `nginx`;
+    - You have to make sure that it is recreated/restarted automatically in case of any failure happens.
 
     &nbsp;
-    - Crie um pod estático em `k8s-lab-node-1` chamado `static-nginx` com a imagem `nginx` e você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
+    - Crie um pod estático em `k8s-lab-node-1` chamado `static-nginx` com a imagem `nginx`;
+    - Você deve ter certeza de que ele será recriado/reiniciado automaticamente no caso de ocorrer alguma falha.
 
     &nbsp;
     - [Laboratório - Challenge 12](./labs/lab-desafio-12.md)
@@ -157,5 +180,115 @@
 
     &nbsp;
     - [Laboratório - Challenge 14](./labs/lab-desafio-14.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 15</summary>
+
+15. Question
+    - Create a pod called `web-pod` using image `nginx`;
+    - Expose it internally with a service called `web-pod-svc`.
+    - Check that you are able to look up'the service and pod from within the cluster;
+    - Use the image: `busybox:1.28` for dns lookup;
+    - Record results in `/root/web-svc.svc` and `/root/web-pod.pod`;
+
+    &nbsp;
+    - Crie um pod chamado `web-pod` usando a imagem `nginx`;
+    - Exponha-o internamente com um serviço chamado `web-pod-svc`.
+    - Verifique se você consegue consultar o serviço e o pod dentro do cluster;
+    - Use a imagem: `busybox:1.28` para pesquisa de DNS;
+    - Registre os resultados em `/root/web-svc.svc` e `/root/web-pod.pod`;
+
+    &nbsp;
+    - [Laboratório - Challenge 15](./labs/lab-desafio-15.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 16</summary>
+
+16. Question
+    - Use `JSON PATH` query to retrieve the osImages of all the nodes and store it in a file `allNodes_osImage_45CVB34Ji.txt` at root location;
+    - Note: The osImages are under the nodeInfo section under status of each node;
+
+    &nbsp;
+    - Use a consulta `JSON PATH` para recuperar os osImages de todos os nós e armazená-los em um arquivo `allNodes_osImage_45CVB34Ji.txt` no local raiz;
+    - Nota: Os osImages estão na seção nodeInfo no status de cada nó;
+
+    &nbsp;
+    - [Laboratório - Challenge 16](./labs/lab-desafio-16.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 17</summary>
+
+17. Question
+    - Create a Persistent Volume with the given spscification.
+        - Volume Name: `pv-rnd`;
+        - Storage: `100Mi`;
+        - Access modes: `ReadWriteMany`
+        - Host Path: `/pv/host_data-rnd`
+
+    &nbsp;
+    - Crie um volume persistente com a especificação fornecida.
+        - Nome do volume: `pv-rnd`;
+        - Armazenamento: `100Mi`;
+        - Modos de acesso: `ReadWriteMany`
+        - Caminho do host: `/pv/host_data-rnd`
+
+    &nbsp;
+    - [Laboratório - Challenge 17](./labs/lab-desafio-17.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 18</summary>
+
+18. Question
+    - Kubernetes Worker Node `node-01` not responding;
+    - Have a look anf fix the issue;
+
+    &nbsp;
+    - O nó de trabalho do Kubernetes `node-01` não está respondendo;
+    - Dê uma olhada e corrija o problema;
+
+
+    &nbsp;
+    - [Laboratório - Challenge 18](./labs/lab-desafio-18.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 19</summary>
+
+19. Question
+    - List the InternalIP of all nodes of the cluster;
+    - Save the result to a file: `/root/Internal_IP_List`.
+    - Answer should be in the  format: `ÌnternalIP of First Node <space> InternalIP oF Second Node (in a single line)` .
+
+    &nbsp;
+    - Listar o InternalIP de todos os nós do cluster;
+    - Salve o resultado em um arquivo: `/root/Internal_IP_List`.
+    - A resposta deverá estar no formato: IP Interno do Primeiro Nó <espaço> IP Interno do Segundo Nó (em uma única linha).
+
+
+    &nbsp;
+    - [Laboratório - Challenge 19](./labs/lab-desafio-19.md)
+</details>
+
+<details>
+<summary>CKA Challenge Question 20</summary>
+
+20. Question
+    - One Static Pod `web-static`, image `busybox`, is currently running on controlplane node;
+    - Move that static pod to run on node01;
+    - Don't need to do any other changes;
+    - NOTE: Static Pod name should be changed from web-static-controlplane to web-static-node01.
+
+    &nbsp;
+    - Um pod estático `web-static`, imagem `busybox`, está atualmente em execução no nó do plano de controle;
+    - Mova esse pod estático para rodar no node01;
+    - Não precisa fazer nenhuma outra alteração;
+    - NOTA: O nome do pod estático deve ser alterado de web-static-controlplane para web-static-node01.
+
+    &nbsp;
+    - [Laboratório - Challenge 20](./labs/lab-desafio-20.md)
 </details>
 
