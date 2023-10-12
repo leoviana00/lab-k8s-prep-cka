@@ -255,4 +255,22 @@
     - [Laboratório - Challenge 18](./labs/lab-desafio-18.md)
 </details>
 
+<details>
+<summary>CKA Challenge Question 19</summary>
+
+19. Question
+    - List the InternalIP of all nodes of the cluster;
+    - Save the result to a file: `/root/Internal_IP_List`.
+    - Answer should be in the  format: `ÌnternalIP of First Node <space> InternalIP oF Second Node (in a single line)` .
+
+    &nbsp;
+    - Listar o InternalIP de todos os nós do cluster;
+    - Salve o resultado em um arquivo: `/root/Internal_IP_List`.
+    - A resposta deverá estar no formato: IP Interno do Primeiro Nó <espaço> IP Interno do Segundo Nó (em uma única linha).
+
+
+    &nbsp;
+    - [Laboratório - Challenge 19](./labs/lab-desafio-19.md)
+</details>
+
 
