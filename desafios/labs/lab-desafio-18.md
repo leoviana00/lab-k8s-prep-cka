@@ -22,6 +22,7 @@
     - No geral, a definição do problema é um apelo à ação para alguém que possui as habilidades e acesso necessários ao cluster Kubernetes para investigar e resolver os problemas com o nó de trabalho que não responde, para garantir a estabilidade e confiabilidade dos aplicativos em execução no cluster.
 
 
+## Solução
 
 - Acessando o `Control PLane` [Master]
 ```bash

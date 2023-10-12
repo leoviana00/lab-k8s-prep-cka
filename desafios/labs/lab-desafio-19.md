@@ -31,6 +31,8 @@ E 192.168.1.3.
 
 - Também requer a capacidade de redirecionar a saída para um arquivo e formatar a saída de acordo com o especificado.
 
+## Solução
+
 - Acessando o `Control PLane` [Master]
 ```bash
 vagrant ssh master-01
@@ -55,7 +57,7 @@ kubectl get nodes -o wide
   <img alt="cka" src="image/lab-19/kube-sheet.png">
 </p>
 
-- Vou pegar essa consulta que tem o objetivo de oergar os ExternalIPs e modificar para pegar os InternalIPs:
+- Vou pegar essa consulta que tem o objetivo de pegar os ExternalIPs e modificar para pegar os InternalIPs:
 ```bash
 kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
 ```
