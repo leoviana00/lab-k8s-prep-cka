@@ -22,6 +22,7 @@
 ## 💡 Projeto
 
 - Preparar um cluster para iniciar os estudos sobre Kubernetes, e ao mesmo tempo abordar itens que são cobrados na certificação CKA.
+- *Em andamento...
 
 ## 👣 Roadmap 
 
