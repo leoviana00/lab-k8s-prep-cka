@@ -292,3 +292,19 @@
     - [Laboratório - Challenge 20](./labs/lab-desafio-20.md)
 </details>
 
+<details>
+<summary>CKA Challenge Question 21</summary>
+
+21. Question
+    - Create a new deployment called web-003;
+    - Scale the deployment to 3 replicas;
+    - Make sure desired number of pod always running;
+
+    &nbsp;
+    - Criar uma nova implantação chamada web-003;
+    - Dimensionar a implantação para 3 réplicas;
+    - Certifique-se do número desejado de pod sempre funcionando;
+
+    &nbsp;
+    - [Laboratório - Challenge 21](./labs/lab-desafio-21.md)
+</details>
