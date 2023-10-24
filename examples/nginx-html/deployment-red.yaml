@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: red-deployment
+  namespace: colors
+  labels:
+    app: red
+spec:
+  selector:
+    matchLabels:
+      app: red
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: red
+    spec:
+      containers:
+      - name: red
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: red-configmap
+# Configmap red
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: red-configmap
+  namespace: colors
+data:
+  index.html: |
+    <html>
+    <body style="background-color:red;">
+    <h1>Frontend</h1>
+    <p>app: red</p>
+    </body>
+    </html>
+# Service red
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: red-service
+  namespace: colors
+spec:
+  selector:
+    app: red
+  ports:
+  - port: 80
+    targetPort: 80
