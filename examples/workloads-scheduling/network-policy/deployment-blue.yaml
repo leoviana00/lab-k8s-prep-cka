@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-deployment
+  namespace: colors
+  labels:
+    app: blue
+spec:
+  selector:
+    matchLabels:
+      app: blue
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: blue
+    spec:
+      containers:
+      - name: blue
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: blue-configmap
+# Configmap blue
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blue-configmap
+  namespace: colors
+data:
+  index.html: |
+    <html>
+    <body style="background-color:blue;">
+    <h1>Frontend</h1>
+    <p>app: blue</p>
+    </body>
+    </html>
+# Service blue
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue-service
+  namespace: colors
+spec:
+  selector:
+    app: blue
+  ports:
+  - port: 80
+    targetPort: 80

@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dog-deployment
+  namespace: animals
+  labels:
+    app: dog
+spec:
+  selector:
+    matchLabels:
+      app: dog
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dog
+    spec:
+      containers:
+      - name: dog
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: dog-configmap
+# Configmap dog
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dog-configmap
+  namespace: animals
+data:
+  index.html: |
+    <html>
+    <body style="background-color:dog;">
+    <h1>Frontend</h1>
+    <p>app: dog</p>
+    </body>
+    </html>
+# Service dog
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dog-service
+  namespace: animals
+spec:
+  selector:
+    app: dog
+  ports:
+  - port: 80
+    targetPort: 80
