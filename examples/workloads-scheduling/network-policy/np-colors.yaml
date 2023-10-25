@@ -1,0 +1,123 @@
+# Permitir/limitar tráfego de entrada e saída para pod
+# Permitindo o tráfego de entrada e saída do pod blue somente ao red
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-egress-policy-colors
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: blue
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: red
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: red
+
+---
+# Permitir/limitar tráfego para pod
+# Permitindo o trafego de entrada apenas dos pods com as labels red e yellow
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-ingress-policy-colors
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: blue
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: red
+    - podSelector:
+        matchLabels:
+          app: yellow
+---
+# Permitir/limitar tráfego do pod com a label blue para outro pod
+# Permitindo o tráfego de saída do pod com a label app: blue somente aos pods, red e yellow na porta 80.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-egress-policy-colors
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: blue
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: red
+    - podSelector:
+        matchLabels:
+          app: yellow
+    ports:
+      - protocol: TCP
+        port: 80
+      - protocol: TCP
+        port: 80
+---
+# Permitir/limitar tráfego para pod
+# Permitindo o trafego de outro rótulo correspondente ao namespace project=animals ao pod app=blue
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-different-namespace-policy
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: blue
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: red
+    - namespaceSelector:
+        matchLabels:
+          project: animals 
+---
+# Negar todo o tráfego para o pod app=blue
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: deny-all-policy
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: blue
+  ingress: []
+
+---
+# Negar padrão todo o tráfego de entrada e saída
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-ingress-egress-deny
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels: {}
+  policyTypes:
+  - Ingress
+  - Egress
+
