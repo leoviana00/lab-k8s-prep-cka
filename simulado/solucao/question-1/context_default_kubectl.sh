@@ -1,0 +1,1 @@
+kubectl config current-context

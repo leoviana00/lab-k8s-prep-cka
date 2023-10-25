@@ -1,0 +1,1 @@
+cat ~/.kube/config | grep current
