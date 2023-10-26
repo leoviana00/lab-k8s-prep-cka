@@ -2,6 +2,7 @@ machines = {
   "master-01" => {"memory" => "2048", "cpu" => "2", "ip" => "11", "image" => "bento/ubuntu-20.04"},
   "node-01"   => {"memory" => "4096", "cpu" => "2", "ip" => "21", "image" => "bento/ubuntu-20.04"},
   "node-02"   => {"memory" => "4096", "cpu" => "2", "ip" => "22", "image" => "bento/ubuntu-20.04"},
+  "node-03"   => {"memory" => "4096", "cpu" => "2", "ip" => "23", "image" => "bento/ubuntu-20.04"}, # Add node worker manualmente ao cluster
   "etcd-01"   => {"memory" => "2048", "cpu" => "2", "ip" => "31", "image" => "bento/ubuntu-20.04"},
   "calico-01" => {"memory" => "2048", "cpu" => "2", "ip" => "41", "image" => "bento/ubuntu-20.04"}
 }
