@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cat-deployment
+  namespace: animals
+  labels:
+    app: cat
+spec:
+  selector:
+    matchLabels:
+      app: cat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cat
+    spec:
+      containers:
+      - name: cat
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: cat-configmap
+# Configmap cat
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cat-configmap
+  namespace: animals
+data:
+  index.html: |
+    <html>
+    <body style="background-color:cat;">
+    <h1>Frontend</h1>
+    <p>app: cat</p>
+    </body>
+    </html>
+# Service cat
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cat-service
+  namespace: animals
+spec:
+  selector:
+    app: cat
+  ports:
+  - port: 80
+    targetPort: 80

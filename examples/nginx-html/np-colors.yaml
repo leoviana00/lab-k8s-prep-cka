@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: np-colors
+  namespace: colors
+spec:
+  podSelector:
+    matchLabels:
+      app: red
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: azul
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: azul

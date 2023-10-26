@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yellow-deployment
+  namespace: colors
+  labels:
+    app: yellow
+spec:
+  selector:
+    matchLabels:
+      app: yellow
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: yellow
+    spec:
+      containers:
+      - name: yellow
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: yellow-configmap
+# Configmap azul
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: yellow-configmap
+  namespace: colors
+data:
+  index.html: |
+    <html>
+    <body style="background-color:yellow;">
+    <h1>Api</h1>
+    <p>app: yellow</p>
+    </body>
+    </html>
+# Service yellow
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yellow-service
+  namespace: colors
+spec:
+  selector:
+    app: yellow
+  ports:
+  - port: 80
+    targetPort: 80

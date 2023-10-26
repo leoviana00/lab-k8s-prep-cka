@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azul-deployment
+  namespace: colors
+  labels:
+    app: azul
+spec:
+  selector:
+    matchLabels:
+      app: azul
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: azul
+    spec:
+      containers:
+      - name: azul
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: azul-configmap
+# Configmap azul
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: azul-configmap
+  namespace: colors
+data:
+  index.html: |
+    <html>
+    <body style="background-color:powderblue;">
+    <h1>Frontend</h1>
+    <p>app: azul</p>
+    </body>
+    </html>
+# Service azul
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azul-service
+  namespace: colors
+spec:
+  selector:
+    app: azul
+  ports:
+  - port: 80
+    targetPort: 80

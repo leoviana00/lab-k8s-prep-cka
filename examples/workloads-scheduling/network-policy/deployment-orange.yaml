@@ -1,0 +1,58 @@
+# Deployment azul
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orange-deployment
+  namespace: colors
+  labels:
+    app: orange
+spec:
+  selector:
+    matchLabels:
+      app: orange
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: orange
+    spec:
+      containers:
+      - name: orange
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-config
+        configMap:
+          name: orange-configmap
+# Configmap orange
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: orange-configmap
+  namespace: colors
+data:
+  index.html: |
+    <html>
+    <body style="background-color:orange;">
+    <h1>Frontend</h1>
+    <p>app: orange</p>
+    </body>
+    </html>
+# Service orange
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orange-service
+  namespace: colors
+spec:
+  selector:
+    app: orange
+  ports:
+  - port: 80
+    targetPort: 80
