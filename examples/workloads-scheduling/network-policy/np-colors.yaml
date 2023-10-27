@@ -64,14 +64,16 @@ spec:
     - podSelector:
         matchLabels:
           app: red
+    ports:
+    - protocol: TCP
+      port: 80
+  - to:  
     - podSelector:
         matchLabels:
           app: yellow
     ports:
-      - protocol: TCP
-        port: 80
-      - protocol: TCP
-        port: 80
+    - protocol: TCP
+       port: 80
 ---
 # Permitir/limitar tráfego para pod
 # Permitindo o trafego de outro rótulo correspondente ao namespace project=animals ao pod app=blue
