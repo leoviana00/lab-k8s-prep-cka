@@ -8,7 +8,6 @@ spec:
   containers:
   - image: nginx:1.16.1-alpine
     name: ready-if-service-ready
-    resources: {}
     livenessProbe:
       exec:
         command:

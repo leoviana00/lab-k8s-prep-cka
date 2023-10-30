@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    id: cross-server-ready
+  name: am-i-ready
+spec:
+  containers:
+  - image: nginx:1.16.1-alpine
+    name: am-i-ready
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
