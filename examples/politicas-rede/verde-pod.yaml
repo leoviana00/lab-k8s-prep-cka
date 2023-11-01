@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: verde
+  namespace: colors
+  labels:                 
+    app: verde       
+spec:
+  containers:             
+  - name: verde-1
+    image: busybox
+    command: ['sh', '-c', 'while true; do echo "Pod verde rodando na porta 9000"; sleep 2; done']
+  - name: verde-2
+    image: busybox
+    command: ['sh','-c', 'echo "Pod verde rodando na porta 9000" > index.html && /bin/httpd -p 9000 -f']
+    ports:                 
+    - containerPort: 9000
+      protocol: TCP
