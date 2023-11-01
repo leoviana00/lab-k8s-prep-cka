@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: safari-pv
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath: 
+    path: /Volumes/Data
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: safari-pvc
+  namespace: default
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: safari
+  name: safari
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: safari
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: safari
+    spec:
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: safari-pvc
+      containers:
+      - image: nginx
+        imagePullPolicy: Always
+        name: httpd
+        command: ["sh","-c", 'ln -snf /usr/share/zoneinfo/Brazil/East /etc/localtime; i=0; while true; do echo "$i: Testando meus volumes, funcionou!!! =) -  $(date)";i=$((i+1)); sleep 2; done > /tmp/safari-data/test-volumes.log']
+        volumeMounts:
+        - mountPath: "/tmp/safari-data"
+          name: data
+      - image: busybox
+        name: coletor
+        command: ["/bin/sh","-c","tail -n+1 -f  /tmp/safari-data/*.log"]
+        volumeMounts:
+        - mountPath: "/tmp/safari-data"
+          name: data
+        resources: {}
