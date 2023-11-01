@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: amarelo
+  namespace: colors
+  labels:                 
+    app: amarelo       
+spec:
+  containers:             
+  - name: amarelo-1
+    image: busybox
+    command: ['sh', '-c', 'while true; do echo "Pod amarelo rodando na porta 80"; sleep 2; done']
+  - name: amarelo-2
+    image: busybox
+    command: ['sh','-c', 'echo "Pod amarelo rodando na porta 80" > index.html && /bin/httpd -p 80 -f']
+    ports:                 
+    - containerPort: 80
+      protocol: TCP

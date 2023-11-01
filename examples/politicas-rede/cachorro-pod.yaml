@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cachorro
+  namespace: animals
+  labels:                 
+    app: cachorro       
+spec:
+  containers:             
+  - name: cachorro-1
+    image: busybox
+    command: ['sh', '-c', 'while true; do echo "Pod cachorro rodando na porta 80"; sleep 2; done']
+  - name: cachorro-2
+    image: busybox
+    command: ['sh','-c', 'echo "Pod cachorro rodando na porta 80" > index.html && /bin/httpd -p 80 -f']
+    ports:                 
+    - containerPort: 80
+      protocol: TCP
