@@ -42,16 +42,16 @@
 1. [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 2. [Vagrant](https://developer.hashicorp.com/vagrant/downloads)
 3. [Ansible](https://docs.ansible.com/)
-4. [Setup K8s Kubeadm](./setup-k8s/Readme.md)
+4. [Setup K8s Kubeadm](./setup/setup-k8s/Readme.md)
 
 - Setup Kubernetes com `Kubespray`
 
-1. [Setup K8s Kubespray](./setup-k8s-kubespray/kubespray/README.md)
+1. [Setup K8s Kubespray](./setup/setup-k8s-kubespray/kubespray/README.md)
 2. [Kubespray](https://github.com/kubernetes-sigs/kubespray)
 
 - Setup Kubernetes com `Kind`
 
-1. [Setup K8s Kind](./setup-kind/Readme.md)
+1. [Setup K8s Kind](./setup/setup-kind/Readme.md)
 2. [Kind](https://kind.sigs.k8s.io/)
 
 ## ♟️ Requisitos computacionais
@@ -79,8 +79,10 @@ OBS: para termos uma experiência comportamental mais próxima da realidade, ser
 
 ## 🧮 Laboratórios
 
-- [ ] [Laboratórios: Praticar com exercicios e desafios](./desafios/Readme.md)
-
+- [x] [Laboratórios: Praticar com exercicios e desafios](./desafios/Readme.md)
+- [x] [Simulado](./simulado/Readme.md)
+ 
 ## 📄 Referências
 - [ Documentação Kubernetes ](https://kubernetes.io/) 
-- [ Curso preparatório: Certificação CKA | Kubernetes v1.26 ] 
+- [ Curso preparatório: Certificação CKA | Kubernetes v1.26 ](https://www.udemy.com/course/curso-preparatorio-certificacao-cka-kubernetes-v121/)
+- [Certified Kubernetes Administrator](https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/)
